@@ -138,11 +138,11 @@ def aurorae(rgb):
 
     try:
         with open(os.path.expanduser \
-            ('~/.local/share/aurorae/themes/Culla/decoration-template.svg')) \
+            ('~/.local/share/aurorae/themes/locus/decoration-template.svg')) \
             as f:
             auroraetemplate = f.read()
     except IOError:
-        fatal("Unable to find Aurorae template.")
+        fatal("Unable to find locus template.")
 
     r, g, b = rgb.split(',')
     hex_colour = f'#{int(r):02x}{int(g):02x}{int(b):02x}'
@@ -150,7 +150,7 @@ def aurorae(rgb):
 
     try:
         with open(os.path.expanduser \
-            ('~/.local/share/aurorae/themes/Culla/decoration.svg'), 'w') as f:
+            ('~/.local/share/aurorae/themes/locus/decoration.svg'), 'w') as f:
             f.write(auroraetemplate)
     except IOError:
         fatal("Fatal. Unable to write aurorae decoration.")
@@ -163,7 +163,7 @@ def aurorae(rgb):
         subprocess.run(['kbuildsycoca5'], stderr=subprocess.DEVNULL)
         subprocess.run(['kwriteconfig5', '--file=kwinrc',
                         '--group=org.kde.kdecoration2',
-                        '--key=theme', '__aurorae__svg__Culla'])
+                        '--key=theme', '__aurorae__svg__locus'])
         proxy.reconfigure()
     else:
         fatal('Unable to find KWin. Is it running?')
@@ -375,5 +375,5 @@ aur_theme = subprocess.run(['kreadconfig5', '--file=kwinrc',
                             '--group=org.kde.kdecoration2', '--key=theme'], \
                             stdout=subprocess.PIPE)
 
-if b'Culla' in aur_theme.stdout:
+if b'locus' in aur_theme.stdout:
     aurorae(window_decoration_color)

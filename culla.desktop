@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=CullaToo
+GenericName=CullaToo
+NoDisplay=false
+Comment=Colourise the desktop
+Exec=CullaToo.py
+Icon=cullatoo.png
+Terminal=false
+MimeType=
+Categories=Settings;DesktopSettings;
+Encoding=UTF-8
+StartupNotify=False

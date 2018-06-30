@@ -173,7 +173,7 @@ def fatal(message):
     print(message)
     sys.exit(1)
 
-#---------------- Culla ------------------------------------------------
+#---------------- locus ------------------------------------------------
 #Raise flag when finding correct session in plasmarc
 flag = False
 #Holder for current activity ID
@@ -225,7 +225,7 @@ if not os.path.isfile(wallpaper):
     sys.exit(1)
 
 #Get samples from the image
-colorslist = list(colorz(wallpaper.rstrip(), 5))
+colorslist = list(colorz(wallpaper.rstrip(), 2))
 
 #Choose darkest returned colour
 image_value = 1.0
@@ -251,7 +251,7 @@ h_base, l_base, s_base = colorsys.rgb_to_hls(r_base/255, g_base/255, b_base/255)
 print("BASE HSL  ", h_base, s_base, l_base)
 
 #l_base = 0.5
-#s_base = 0.9
+s_base += 0.05
 
 #Boundary check
 if s_base > 0.99:
@@ -317,7 +317,7 @@ frame = color_triplet(h_base, l_frame, s_frame)
 highlight_color = color_triplet(h_base, l_button, s_button)
 
 #Color Scheme Window Decoration and Selection
-window_decoration_color = color_triplet(h_base, l_selection, 0.9)
+window_decoration_color = color_triplet(h_base, 0.5, 0.98)
 
 #Color Scheme Focus
 focus_offset = 0.06

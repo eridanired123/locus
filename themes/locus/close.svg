@@ -14,7 +14,7 @@
    viewBox="0 0 16.070603 16.07059"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="close.svg">
   <defs
      id="defs2" />
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.293775"
-     inkscape:cx="-25.290415"
-     inkscape:cy="31.271812"
+     inkscape:zoom="29.1751"
+     inkscape:cx="2.1156267"
+     inkscape:cy="45.526234"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -82,15 +82,15 @@
          transform="translate(-0.81619264,-0.65295405)"
          id="g870">
         <path
-           style="fill:none;fill-rule:evenodd;stroke:#e2e2e2;stroke-width:0.67591482;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m -9.8293667,282.74979 4.0543172,4.05431"
+           style="fill:none;fill-rule:evenodd;stroke:#60686a;stroke-width:0.6760104;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.99122804"
+           d="m -9.6739078,282.90525 3.7433993,3.74339"
            id="path864"
            inkscape:connector-curvature="0" />
         <path
            inkscape:connector-curvature="0"
            id="path866"
-           d="m -5.7750495,282.74979 -4.0543172,4.05431"
-           style="fill:none;fill-rule:evenodd;stroke:#e2e2e2;stroke-width:0.67591482;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+           d="m -5.9305085,282.90525 -3.7433993,3.74339"
+           style="fill:none;fill-rule:evenodd;stroke:#60686a;stroke-width:0.67591482;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
       </g>
     </g>
     <g

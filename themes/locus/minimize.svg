@@ -14,7 +14,7 @@
    viewBox="0 0 16.070603 16.070591"
    version="1.1"
    id="svg2750"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="minimize.svg">
   <defs
      id="defs2744" />
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.244893"
-     inkscape:cx="20.095861"
-     inkscape:cy="31.4175"
+     inkscape:zoom="63.610721"
+     inkscape:cx="14.996526"
+     inkscape:cy="37.181181"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -81,11 +81,11 @@
          y="285.98456" />
       <rect
          y="290.60941"
-         x="-14.812297"
-         height="0.75881672"
-         width="4.4734893"
+         x="-14.693223"
+         height="0.66315019"
+         width="4.235343"
          id="rect869"
-         style="opacity:1;fill:#e2e2e2;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.77807504;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+         style="opacity:1;fill:#606668;fill-opacity:0.99561405;fill-rule:nonzero;stroke:none;stroke-width:0.77807504;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
     <g
        transform="translate(19.152769,8.8940375)"

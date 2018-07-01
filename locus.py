@@ -60,7 +60,7 @@ rtoh = lambda rgb: '#%s' % ''.join(('%02x' % p for p in rgb))
 
 def colorz(filename, n=3):
     img = Image.open(filename)
-    img.thumbnail((196, 196))
+    img.thumbnail((256, 256))
     w, h = img.size
 
     points = get_points(img)
@@ -113,7 +113,7 @@ def kmeans(points, k, min_diff):
     return clusters
 
 
-#------ Culla Functions ------------------------------------------------
+#------ locus Functions ------------------------------------------------
 def color_triplet(h, l, s):
     r, g, b = colorsys.hls_to_rgb(h, l, s)
 
@@ -225,7 +225,7 @@ if not os.path.isfile(wallpaper):
     sys.exit(1)
 
 #Get samples from the image
-colorslist = list(colorz(wallpaper.rstrip(), 2))
+colorslist = list(colorz(wallpaper.rstrip(), 5))
 
 #Choose darkest returned colour
 image_value = 1.0
@@ -275,11 +275,15 @@ if l_base > 0.62:
     light2 = 0.0
     minimised_task = "248,248,248"
 
-#Panel Background
-#panel_background = (','.join([str(r_base), str(g_base), str(b_base)]))
-panel_background = (color_triplet(h_base, l_base, s_base))
 
-print(color_triplet(h_base,l_base,s_base))
+#Hues with set parameters
+s_frame = s_base
+s_button = s_base
+s_selection = s_base
+s_window = s_base + 0.08
+
+
+print("SBASE",s_base)
 #Check for monochrome
 if s_base < 0.09:
     s_frame = 0.0
@@ -287,18 +291,19 @@ if s_base < 0.09:
     s_selection = 0.0
     s_base = 0.0
     s_offset = 0.0
+    s_window = 0.0
+
+
+#Panel Background
+panel_background = (color_triplet(h_base, l_base, s_base))
 
 #Hues relative to base
-#l_dialog = l_base + l_offset
-#s_dialog = s_base - s_offset
+l_dialog = l_base + l_offset
+s_dialog = s_base - s_offset
 
 #Alternate shade for dialog backgrounds
-#dialog_background = color_triplet(h_base, l_dialog, s_dialog)
-
-#Hues with set parameters
-s_frame = s_base
-s_button = s_base
-s_selection = s_base
+dialog_background = color_triplet(h_base, l_dialog, s_dialog)
+#dialog_background = "31,31,31"
 
 if s_base < 0.88 and s_base > 0.09:
     s_frame = s_base + 0.12
@@ -317,7 +322,7 @@ frame = color_triplet(h_base, l_frame, s_frame)
 highlight_color = color_triplet(h_base, l_button, s_button)
 
 #Color Scheme Window Decoration and Selection
-window_decoration_color = color_triplet(h_base, 0.5, 0.98)
+window_decoration_color = color_triplet(h_base, 0.4, s_window)
 
 #Color Scheme Focus
 focus_offset = 0.06
@@ -328,7 +333,7 @@ focus_decoration_color = color_triplet(h_base, l_selection + focus_offset,
 
 plasma_colors = plasma_colors.replace('aaa', panel_background)
 plasma_colors = plasma_colors.replace('bbb', foreground)
-plasma_colors = plasma_colors.replace('ccc', panel_background)
+plasma_colors = plasma_colors.replace('ccc', dialog_background)
 plasma_colors = plasma_colors.replace('ddd', frame)
 plasma_colors = plasma_colors.replace('eee', highlight_color)
 plasma_colors = plasma_colors.replace('fff', highlight_color)

@@ -60,7 +60,7 @@ rtoh = lambda rgb: '#%s' % ''.join(('%02x' % p for p in rgb))
 
 def colorz(filename, n=3):
     img = Image.open(filename)
-    img.thumbnail((256, 256))
+    img.thumbnail((128, 128))
     w, h = img.size
 
     points = get_points(img)
@@ -114,8 +114,8 @@ def kmeans(points, k, min_diff):
 
 
 #------ locus Functions ------------------------------------------------
-def color_triplet(h, l, s):
-    r, g, b = colorsys.hls_to_rgb(h, l, s)
+def color_triplet(h, s, v):
+    r, g, b = colorsys.hsv_to_rgb(h, s, v)
 
     if r > 1.0:
         r = 1.0
@@ -225,30 +225,30 @@ if not os.path.isfile(wallpaper):
     sys.exit(1)
 
 #Get samples from the image
-colorslist = list(colorz(wallpaper.rstrip(), 4))
+colorslist = list(colorz(wallpaper.rstrip(), 5))
 
 #Choose darkest returned colour
 image_value = 1.0
-r_base = 0.0
-g_base = 0.0
-b_base = 0.0
+h_base = 0.0
+s_base = 0.0
+v_base = 0.0
 
 for x in colorslist:
     r, g, b = tuple(int(x[i:i+2], 16) for i in (1, 3, 5))
     h, s, v = colorsys.rgb_to_hsv(r/255, g/255, b/255)
 
     if v <= image_value:   #Choose darkest
-        r_base = r
-        g_base = g
-        b_base = b
+        h_base = h
+        s_base = s
+        v_base = v
         image_value = v
 
 
 #Convert to HLS for colour ops
-h_base, l_base, s_base = colorsys.rgb_to_hls(r_base/255, g_base/255, b_base/255)
+#h_base, l_base, s_base = colorsys.rgb_to_hls(r_base/255, g_base/255, b_base/255)
 
 
-print("BASE HSL  ", h_base, s_base, l_base)
+print("BASE HSV  ", h_base, s_base, v_base)
 
 #l_base = 0.5
 s_base += 0.05
@@ -258,7 +258,7 @@ if s_base > 0.99:
     s_base = 0.99
 
 #Dialog background adjustment amounts
-l_offset = 0.09
+v_offset = 0.09
 s_offset = 0.09
 
 #Default text colour
@@ -268,7 +268,7 @@ foreground = "255,255,255"
 minimised_task = "36,36,36"
 
 #Lightness threshold for dark text
-if l_base > 0.62:
+if v_base > 0.62:
     foreground = "16,16,16"
     #offset = 0 - offset
     light1 = 0.0
@@ -282,26 +282,29 @@ s_button = s_base
 s_selection = s_base
 s_window = s_base + 0.08
 
+#Boundary check
+if s_window > 0.99:
+    s_window = 0.99
 
 #Check for monochrome
-if s_base < 0.09:
-    s_frame = 0.0
-    s_button = 0.0
-    s_selection = 0.0
-    s_base = 0.0
-    s_offset = 0.0
-    s_window = 0.0
+#if s_base < 0.09:
+    #s_frame = 0.0
+    #s_button = 0.0
+    #s_selection = 0.0
+    #s_base = 0.0
+    #s_offset = 0.0
+    #s_window = 0.0
 
 
 #Panel Background
-panel_background = (color_triplet(h_base, l_base, s_base))
+panel_background = (color_triplet(h_base, s_base, v_base))
 
 #Hues relative to base
-l_dialog = l_base + l_offset
+v_dialog = v_base + v_offset
 s_dialog = s_base - s_offset
 
 #Alternate shade for dialog backgrounds
-dialog_background = color_triplet(h_base, l_dialog, s_dialog)
+dialog_background = color_triplet(h_base, s_dialog, v_dialog)
 #dialog_background = "31,31,31"
 
 if s_base < 0.88 and s_base > 0.09:
@@ -309,26 +312,29 @@ if s_base < 0.88 and s_base > 0.09:
     s_button = s_base + 0.12
     s_selection = s_base + 0.12
 
-l_frame = 0.45
-l_button = 0.4
-l_selection = 0.4
+v_frame = 0.45
+v_button = 0.4
+v_selection = 0.4
 #s_selection = 0.45
 
 #Frame and button hover
-frame = color_triplet(h_base, l_frame, s_frame)
+frame = color_triplet(h_base, s_frame, v_frame)
 
 #Plasma selection and button background
-highlight_color = color_triplet(h_base, l_button, s_button)
+highlight_color = color_triplet(h_base, s_button, v_button)
 
+print(s_base, s_window)
 #Color Scheme Window Decoration and Selection
-window_decoration_color = color_triplet(h_base, 0.4, s_window)
+window_decoration_color = color_triplet(h_base, s_window, 0.4)
 
 #Color Scheme Focus
 focus_offset = 0.06
 
 #Focus
-focus_decoration_color = color_triplet(h_base, l_selection + focus_offset,
-                                       s_selection - focus_offset)
+#focus_decoration_color = color_triplet(h_base, l_selection + focus_offset,
+                                       #s_selection - focus_offset)
+
+focus_decoration_color = color_triplet(h_base, 0.7, s_base)
 
 plasma_colors = plasma_colors.replace('aaa', panel_background)
 plasma_colors = plasma_colors.replace('bbb', foreground)
@@ -361,7 +367,7 @@ except IOError as e:
 try:
     subprocess.run(['kwriteconfig5', '--file=kdeglobals',
                     '--group=Colors:Selection',
-                    '--key=BackgroundNormal', window_decoration_color])
+                    '--key=BackgroundNormal', focus_decoration_color])
     subprocess.run(['kwriteconfig5', '--file=kdeglobals',
                     '--group=Colors:View',
                     '--key=DecorationFocus',

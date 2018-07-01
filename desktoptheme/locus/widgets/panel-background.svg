@@ -316,9 +316,9 @@
        width="3"
        id="top"
        class="ColorScheme-Background"
-       style="fill:currentColor;fill-opacity:0.98;stroke:none;stroke-width:0.24000004" />
+       style="fill:currentColor;fill-opacity:0.8;stroke:none;stroke-width:0.24000004" />
     <rect
-       style="fill:currentColor;fill-opacity:0.98;stroke:none;stroke-width:0.24000005"
+       style="fill:currentColor;fill-opacity:0.8;stroke:none;stroke-width:0.24000005"
        id="right"
        class="ColorScheme-Background"
        width="3"
@@ -326,7 +326,7 @@
        x="226.59435"
        y="304.84363" />
     <rect
-       style="fill:currentColor;fill-opacity:0.98;stroke:none;stroke-width:0.24000004"
+       style="fill:currentColor;fill-opacity:0.8;stroke:none;stroke-width:0.24000004"
        id="bottom"
        class="ColorScheme-Background"
        width="3"
@@ -341,7 +341,7 @@
        width="48"
        id="center"
        class="ColorScheme-Background"
-       style="fill:currentColor;fill-opacity:0.98;stroke:none;stroke-width:0.96000034" />
+       style="fill:currentColor;fill-opacity:0.8;stroke:none;stroke-width:0.96000034" />
     <rect
        transform="rotate(90)"
        style="fill:#79cbff;fill-opacity:1;stroke:none;stroke-width:0.20412518"
@@ -365,7 +365,7 @@
        width="3"
        id="left"
        class="ColorScheme-Background"
-       style="fill:currentColor;fill-opacity:0.98;stroke:none;stroke-width:0.24000005" />
+       style="fill:currentColor;fill-opacity:0.8;stroke:none;stroke-width:0.24000005" />
     <rect
        y="-246.31116"
        x="269.59692"
@@ -389,9 +389,9 @@
        width="3"
        id="topright"
        class="ColorScheme-Background"
-       style="fill:currentColor;fill-opacity:0.98;stroke:none;stroke-width:0.06000001" />
+       style="fill:currentColor;fill-opacity:0.8;stroke:none;stroke-width:0.06000001" />
     <rect
-       style="fill:currentColor;fill-opacity:0.98;stroke:none;stroke-width:0.06000001"
+       style="fill:currentColor;fill-opacity:0.8;stroke:none;stroke-width:0.06000001"
        id="topleft"
        class="ColorScheme-Background"
        width="3"
@@ -405,9 +405,9 @@
        width="3"
        class="ColorScheme-Background"
        id="bottomleft"
-       style="fill:currentColor;fill-opacity:0.98;stroke:none;stroke-width:0.06000001" />
+       style="fill:currentColor;fill-opacity:0.8;stroke:none;stroke-width:0.06000001" />
     <rect
-       style="fill:currentColor;fill-opacity:0.98;stroke:none;stroke-width:0.06000001"
+       style="fill:currentColor;fill-opacity:0.8;stroke:none;stroke-width:0.06000001"
        id="bottomright"
        class="ColorScheme-Background"
        width="3"

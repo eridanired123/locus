@@ -2,16 +2,16 @@
 
 AURORAE="${HOME}/.local/share/aurorae/themes"
 mkdir -pv "$AURORAE"
-cp -rv themes/Culla  "$AURORAE"
+cp -rv themes/locus  "$AURORAE"
 
 PLASMA="${HOME}/.local/share/plasma/desktoptheme"
 mkdir -pv "$PLASMA"
-cp -rv desktoptheme/Culla "$PLASMA"
+cp -rv desktoptheme/locus "$PLASMA"
 
 BIN="${HOME}/.local/bin"
 mkdir -pv "$BIN"
-cp -v Culla.py "$BIN"
-chmod -v 755 "$BIN"/Culla.py
+cp -v locus.py "$BIN"
+chmod -v 755 "$BIN"/locus.py
 
 SCHEME="${HOME}/.local/share/color-schemes"
 mkdir -pv "$SCHEME"

@@ -225,7 +225,7 @@ if not os.path.isfile(wallpaper):
     sys.exit(1)
 
 #Get samples from the image
-colorslist = list(colorz(wallpaper.rstrip(), 5))
+colorslist = list(colorz(wallpaper.rstrip(), 4))
 
 #Choose darkest returned colour
 image_value = 1.0
@@ -283,7 +283,6 @@ s_selection = s_base
 s_window = s_base + 0.08
 
 
-print("SBASE",s_base)
 #Check for monochrome
 if s_base < 0.09:
     s_frame = 0.0
@@ -341,10 +340,10 @@ plasma_colors = plasma_colors.replace('ggg', minimised_task)
 
 try:
     with open(os.path.expanduser( \
-        '~/.local/share/plasma/desktoptheme/Culla/colors'), 'w') as f:
+        '~/.local/share/plasma/desktoptheme/locus/colors'), 'w') as f:
         f.write(plasma_colors)
 except:
-    fatal("Unable to open Culla Plasma colors. Is it installed?")
+    fatal("Unable to open locus Plasma colors. Is it installed?")
 
 try:
     subprocess.run(['kwriteconfig5', '--file=plasmarc',
@@ -354,7 +353,7 @@ try:
     time.sleep(0.5)
 
     subprocess.run(['kwriteconfig5', '--file=plasmarc',
-                    '--group=Theme', '--key=name', 'Culla'])
+                    '--group=Theme', '--key=name', 'locus'])
 except IOError as e:
     print(e)
     fatal("Fatal. Unable to run kwriteconfig.")

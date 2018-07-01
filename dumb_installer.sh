@@ -17,13 +17,13 @@ SCHEME="${HOME}/.local/share/color-schemes"
 mkdir -pv "$SCHEME"
 cp -v Culla.colors "$SCHEME"
 
-APPS="${HOME}/.local/share/applications"
-mkdir -pv "$APPS"
-cp -v culla.desktop "$APPS"
-
-PIXMAP="${HOME}/.local/share/pixmaps"
-mkdir -pv "$PIXMAP"
-cp -v culla.png "$PIXMAP"
+# APPS="${HOME}/.local/share/applications"
+# mkdir -pv "$APPS"
+# cp -v culla.desktop "$APPS"
+# 
+# PIXMAP="${HOME}/.local/share/pixmaps"
+# mkdir -pv "$PIXMAP"
+# cp -v culla.png "$PIXMAP"
 
 python3 -c "from PIL import Image" 2>/dev/null
 

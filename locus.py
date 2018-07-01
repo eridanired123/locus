@@ -250,12 +250,19 @@ for x in colorslist:
 
 print("BASE HSV  ", h_base, s_base, v_base)
 
-#l_base = 0.5
-s_base += 0.05
 
-#Boundary check
-if s_base > 0.99:
-    s_base = 0.99
+#Panel Background
+panel_background = (color_triplet(h_base, s_base, v_base))
+
+s_window = s_base
+
+if s_window < 0.91 and s_window > 0.04:
+    s_window += 0.08
+
+#Color Scheme Window Decoration and Selection
+window_decoration_color = color_triplet(h_base, s_window, 0.6)
+
+
 
 #Dialog background adjustment amounts
 v_offset = 0.09
@@ -296,8 +303,7 @@ if s_window > 0.99:
     #s_window = 0.0
 
 
-#Panel Background
-panel_background = (color_triplet(h_base, s_base, v_base))
+
 
 #Hues relative to base
 v_dialog = v_base + v_offset
@@ -307,7 +313,7 @@ s_dialog = s_base - s_offset
 dialog_background = color_triplet(h_base, s_dialog, v_dialog)
 #dialog_background = "31,31,31"
 
-if s_base < 0.88 and s_base > 0.09:
+if s_base < 0.88 and s_base > 0.04:
     s_frame = s_base + 0.12
     s_button = s_base + 0.12
     s_selection = s_base + 0.12
@@ -323,9 +329,7 @@ frame = color_triplet(h_base, s_frame, v_frame)
 #Plasma selection and button background
 highlight_color = color_triplet(h_base, s_button, v_button)
 
-print(s_base, s_window)
-#Color Scheme Window Decoration and Selection
-window_decoration_color = color_triplet(h_base, s_window, 0.4)
+
 
 #Color Scheme Focus
 focus_offset = 0.06

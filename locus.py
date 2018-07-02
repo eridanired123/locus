@@ -60,7 +60,7 @@ rtoh = lambda rgb: '#%s' % ''.join(('%02x' % p for p in rgb))
 
 def colorz(filename, n=3):
     img = Image.open(filename)
-    img.thumbnail((128, 128))
+    img.thumbnail((96, 96))
     w, h = img.size
 
     points = get_points(img)
@@ -225,7 +225,7 @@ if not os.path.isfile(wallpaper):
     sys.exit(1)
 
 #Get samples from the image
-colorslist = list(colorz(wallpaper.rstrip(), 5))
+colorslist = list(colorz(wallpaper.rstrip(), 3))
 
 #Choose darkest returned colour
 image_value = 1.0
@@ -244,76 +244,36 @@ for x in colorslist:
         image_value = v
 
 
-#Convert to HLS for colour ops
-#h_base, l_base, s_base = colorsys.rgb_to_hls(r_base/255, g_base/255, b_base/255)
-
-
 print("BASE HSV  ", h_base, s_base, v_base)
 
 
 #Panel Background
 panel_background = (color_triplet(h_base, s_base, v_base))
 
-s_window = s_base
+#Window Decoration saturation 
+s_window = 0.75
 
-if s_window < 0.91 and s_window > 0.04:
-    s_window += 0.08
+if s_base < 0.04:
+    s_window = 0.0
 
 #Color Scheme Window Decoration and Selection
-window_decoration_color = color_triplet(h_base, s_window, 0.6)
-
-
-
-#Dialog background adjustment amounts
-v_offset = 0.09
-s_offset = 0.09
+window_decoration_color = color_triplet(h_base, s_window, 0.75)
 
 #Default text colour
-foreground = "255,255,255"
+foreground = "242,242,242"
 
 #Minimised taskbar
 minimised_task = "36,36,36"
-
-#Lightness threshold for dark text
-if v_base > 0.62:
-    foreground = "16,16,16"
-    #offset = 0 - offset
-    light1 = 0.0
-    light2 = 0.0
-    minimised_task = "248,248,248"
-
-
-#Hues with set parameters
-s_frame = s_base
 s_button = s_base
-s_selection = s_base
-s_window = s_base + 0.08
-
-#Boundary check
-if s_window > 0.99:
-    s_window = 0.99
-
-#Check for monochrome
-#if s_base < 0.09:
-    #s_frame = 0.0
-    #s_button = 0.0
-    #s_selection = 0.0
-    #s_base = 0.0
-    #s_offset = 0.0
-    #s_window = 0.0
-
-
-
 
 #Hues relative to base
-v_dialog = v_base + v_offset
-s_dialog = s_base - s_offset
+v_dialog = v_base + 0.09
+s_dialog = s_base - 0.09
 
 #Alternate shade for dialog backgrounds
 dialog_background = color_triplet(h_base, s_dialog, v_dialog)
-#dialog_background = "31,31,31"
 
-if s_base < 0.88 and s_base > 0.04:
+if s_base < 0.88 and s_base > 0.08:
     s_frame = s_base + 0.12
     s_button = s_base + 0.12
     s_selection = s_base + 0.12
@@ -323,8 +283,13 @@ v_button = 0.4
 v_selection = 0.4
 #s_selection = 0.45
 
+s_frame = 0.5
+
+if s_base < 0.04:
+    s_frame = 0.0
+
 #Frame and button hover
-frame = color_triplet(h_base, s_frame, v_frame)
+frame = color_triplet(h_base, s_frame, 0.9)
 
 #Plasma selection and button background
 highlight_color = color_triplet(h_base, s_button, v_button)
@@ -338,7 +303,7 @@ focus_offset = 0.06
 #focus_decoration_color = color_triplet(h_base, l_selection + focus_offset,
                                        #s_selection - focus_offset)
 
-focus_decoration_color = color_triplet(h_base, 0.7, s_base)
+focus_decoration_color = color_triplet(h_base, 0.7, 0.9)
 
 plasma_colors = plasma_colors.replace('aaa', panel_background)
 plasma_colors = plasma_colors.replace('bbb', foreground)

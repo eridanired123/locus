@@ -246,9 +246,13 @@ for x in colorslist:
 
 print("BASE HSV  ", h_base, s_base, v_base)
 
+s_panel = s_base
+
+if s_base < 0.93:
+    s_panel += 0.06
 
 #Panel Background
-panel_background = (color_triplet(h_base, s_base, v_base))
+panel_background = (color_triplet(h_base, s_panel, v_base))
 
 #Window Decoration saturation 
 s_window = 0.75
@@ -303,7 +307,12 @@ focus_offset = 0.06
 #focus_decoration_color = color_triplet(h_base, l_selection + focus_offset,
                                        #s_selection - focus_offset)
 
-focus_decoration_color = color_triplet(h_base, 0.7, 0.9)
+s_focus = s_base
+
+if s_focus > 0.04:
+    s_focus /= 4
+
+focus_decoration_color = color_triplet(h_base, s_focus, 0.98)
 
 plasma_colors = plasma_colors.replace('aaa', panel_background)
 plasma_colors = plasma_colors.replace('bbb', foreground)

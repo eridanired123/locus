@@ -15,7 +15,7 @@
    version="1.1"
    height="72.413734"
    width="58"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="slider.svg"
    viewBox="0 0 58.000002 72.413734">
   <sodipodi:namedview
@@ -32,9 +32,9 @@
      inkscape:document-units="px"
      id="namedview41"
      showgrid="false"
-     inkscape:zoom="8.1344699"
-     inkscape:cx="15.053271"
-     inkscape:cy="31.815019"
+     inkscape:zoom="16.26894"
+     inkscape:cx="21.028731"
+     inkscape:cy="35.715693"
      inkscape:current-layer="svg3025"
      inkscape:snap-to-guides="false"
      inkscape:window-x="94"
@@ -439,19 +439,19 @@
        transform="translate(0.48767466,2.0726173)"
        id="g901">
       <circle
-         style="opacity:1;fill:currentColor;fill-opacity:0.3;fill-rule:evenodd;stroke:none;stroke-width:2.83246946;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         style="opacity:1;fill:currentColor;fill-opacity:0.1;fill-rule:evenodd;stroke:none;stroke-width:2.83246946;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          class="ColorScheme-ViewHover"
-         id="path895"
+         id="xxy"
          cx="-28.137224"
          cy="29.228542"
          r="8" />
       <circle
          cy="29.228542"
          cx="-28.137224"
-         id="circle897"
+         id="xxx"
          class="ColorScheme-ViewHover"
-         style="opacity:1;fill:currentColor;fill-opacity:0.7;fill-rule:evenodd;stroke:none;stroke-width:1.30419135;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         r="3.6835454" />
+         style="opacity:1;fill:currentColor;fill-opacity:0.9;fill-rule:evenodd;stroke:none;stroke-width:1.30419135;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         r="7.0027537" />
     </g>
   </g>
   <path

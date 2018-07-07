@@ -243,9 +243,7 @@ for x in colorslist:
         v_base = v
         image_value = v
 
-
-print("BASE HSV  ", h_base, s_base, v_base)
-
+#A little extra saturation on the panel looks nice
 s_panel = s_base
 
 if s_base < 0.93:
@@ -285,7 +283,6 @@ if s_base < 0.88 and s_base > 0.08:
 v_frame = 0.45
 v_button = 0.4
 v_selection = 0.4
-#s_selection = 0.45
 
 s_frame = 0.5
 
@@ -304,9 +301,6 @@ highlight_color = color_triplet(h_base, s_button, v_button)
 focus_offset = 0.06
 
 #Focus
-#focus_decoration_color = color_triplet(h_base, l_selection + focus_offset,
-                                       #s_selection - focus_offset)
-
 s_focus = s_base
 
 if s_focus > 0.04:
@@ -342,6 +336,8 @@ except IOError as e:
     print(e)
     fatal("Fatal. Unable to run kwriteconfig.")
 
+#Clunky I know but no idea how to write scheme and load globally. Source says
+#it is in a private API.
 try:
     subprocess.run(['kwriteconfig5', '--file=kdeglobals',
                     '--group=Colors:Selection',

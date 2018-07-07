@@ -351,6 +351,10 @@ try:
                     '--key=DecorationFocus',
                     focus_decoration_color])
     subprocess.run(['kwriteconfig5', '--file=kdeglobals',
+                    '--group=Colors:Button',
+                    '--key=DecorationHover',
+                    focus_decoration_color])
+    subprocess.run(['kwriteconfig5', '--file=kdeglobals',
                     '--group=WM',
                     '--key=activeBackground',
                     window_decoration_color])

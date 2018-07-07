@@ -194,7 +194,7 @@
   <rect
      style="fill:currentColor;fill-opacity:0.5;stroke:none;stroke-width:0.32000008"
      id="hover-center"
-     class="ColorScheme-ButtonBackground"
+     class="ColorScheme-ViewHover"
      width="16"
      height="16"
      x="24.519819"
@@ -205,13 +205,13 @@
      height="3"
      width="16"
      id="hover-right"
-     class="ColorScheme-ButtonBackground"
+     class="ColorScheme-ViewHover"
      style="fill:currentColor;fill-opacity:0.5;stroke:none;stroke-width:0.13856408"
      transform="rotate(90)" />
   <rect
      transform="rotate(90)"
      style="fill:currentColor;fill-opacity:0.5;stroke:none;stroke-width:0.13856408"
-     class="ColorScheme-ButtonBackground"
+     class="ColorScheme-ViewHover"
      id="hover-left"
      width="16"
      height="3"
@@ -221,7 +221,7 @@
      transform="scale(-1)"
      style="fill:currentColor;fill-opacity:0.5;stroke:none;stroke-width:0.13856408"
      id="hover-top"
-     class="ColorScheme-ButtonBackground"
+     class="ColorScheme-ViewHover"
      width="16"
      height="3"
      x="-40.519817"
@@ -232,30 +232,30 @@
      height="3"
      width="16"
      id="hover-bottom"
-     class="ColorScheme-ButtonBackground"
+     class="ColorScheme-ViewHover"
      style="fill:currentColor;fill-opacity:0.5;stroke:none;stroke-width:0.13856408"
      transform="scale(-1)" />
   <path
      style="opacity:1;fill:currentColor;fill-opacity:0.5;fill-rule:evenodd;stroke:none;stroke-width:34.8672905;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      d="m 40.519814,6.6026402 v 3 h 3 v -1.5 -0.039063 c 0,-0.8093514 -0.649634,-1.4609375 -1.458984,-1.4609375 h -0.04102 z"
      id="hover-topright"
-     class="ColorScheme-ButtonBackground"
+     class="ColorScheme-ViewHover"
      inkscape:connector-curvature="0" />
   <path
      inkscape:connector-curvature="0"
-     class="ColorScheme-ButtonBackground"
+     class="ColorScheme-ViewHover"
      id="hover-topleft"
      d="m 24.519817,6.6026404 v 3 h -3 v -1.5 -0.039063 c 0,-0.8093514 0.649634,-1.4609375 1.458984,-1.4609375 h 0.04102 z"
      style="opacity:1;fill:currentColor;fill-opacity:0.5;fill-rule:evenodd;stroke:none;stroke-width:34.8672905;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <path
      inkscape:connector-curvature="0"
-     class="ColorScheme-ButtonBackground"
+     class="ColorScheme-ViewHover"
      id="hover-bottomright"
      d="m 40.519814,28.602641 v -3 h 3 v 1.5 0.03906 c 0,0.809352 -0.649634,1.460938 -1.458984,1.460938 h -0.04102 z"
      style="opacity:1;fill:currentColor;fill-opacity:0.5;fill-rule:evenodd;stroke:none;stroke-width:34.8672905;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <path
      inkscape:connector-curvature="0"
-     class="ColorScheme-ButtonBackground"
+     class="ColorScheme-ViewHover"
      id="hover-bottomleft"
      d="m 24.519817,28.602638 v -3 h -3 v 1.5 0.03906 c 0,0.809351 0.649634,1.460937 1.458984,1.460937 h 0.04102 z"
      style="opacity:1;fill:currentColor;fill-opacity:0.5;fill-rule:evenodd;stroke:none;stroke-width:34.8672905;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />

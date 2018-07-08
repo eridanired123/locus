@@ -12,8 +12,8 @@ from collections import namedtuple
 from math import sqrt
 import dbus
 
-if sys.version_info[1] < 4:
-    print("Culla requires Python 3.4 or later.")
+if sys.version_info[1] < 5:
+    print("Culla requires Python 3.5 or later.")
     sys.exit(1)
 
 try:
@@ -114,7 +114,10 @@ def kmeans(points, k, min_diff):
 
 
 #------ locus Functions ------------------------------------------------
+
 def color_triplet(h, s, v):
+    """Return r,g,b string from given h,s,v"""
+
     r, g, b = colorsys.hsv_to_rgb(h, s, v)
 
     if r > 1.0:
@@ -173,7 +176,9 @@ def fatal(message):
     print(message)
     sys.exit(1)
 
-#---------------- locus ------------------------------------------------
+
+#---------------- locus begins here ------------------------------------
+
 #Raise flag when finding correct session in plasmarc
 flag = False
 #Holder for current activity ID

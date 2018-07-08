@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=locus
+GenericName=locus
+NoDisplay=false
+Comment=Colourise the desktop
+Exec=locus.py
+Icon=locus.png
+Terminal=false
+MimeType=
+Categories=Settings;DesktopSettings;
+Encoding=UTF-8
+StartupNotify=False
